@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/aviacss.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class="eee">
+        <a href="avia.html"><img src="media/logo.png" alt="" class="logo"></a>
+        <input type="search" class="search1" placeholder="Поиск">
+        <a href="#1" class="button1">
+                Акции
+        </a>
+        <a href="/regist.html" class="button2">
+                Кабинет
+        </a>
+    </section>
+    <div class="dsds">
+        <h1 align="center" style="position:relative; top: -10px; left: 540px;">
+            Регистрация/Авторизация
+        </h1>
+    </div>
+    <main class="osn">
+        <center><div class="form-container">
+            <h2>Регистрация</h2>
+            <form>
+                <div class="form-field">
+                    Имя
+                    <input type="text" id="name" class="formpoisk7" required>
+                </div>
+                <div class="form-field">
+                    Фамилия
+                    <input type="text" id="last" class="formpoisk7" required>
+                </div>
+                <div class="form-field">
+                    Номер документа
+                    <input type="text" id="doc" class="formpoisk7" required>
+                </div>
+                <div class="form-field">
+                    Телефон
+                    <input type="tel" id="phone" class="formpoisk7" required>
+                </div>
+                <div class="form-field">
+                    Пароль
+                    <input type="password" id="pass" class="formpoisk7" pattern="(?=.*\d)(?=.*[!*$]).{7,}" required>
+                </div>
+                <div class="form-field">
+                    Повтор пароля
+                    <input type="password" id="pass2" class="formpoisk7" required>
+                </div>
+                <button type="submit" class="formpoisk6">Регистрация</button>
+            </form>
+        </div>
+    
+        <div class="form-container">
+            <h2>Вход</h2>
+            <form>
+                <div class="form-field">
+                    <label for="fpn">Телефон</label>
+                    <input type="tel" id="fpn" class="formpoisk7_1" required>
+                </div>
+                <div class="form-field">
+                    <label for="fps">Пароль</label>
+                    <input type="password" id="fps" class="formpoisk8_1" required>
+                </div>
+                <button type="submit" class="formpoisk6_1">Вход</button>
+            </form>
+        </div></center>
+    </main>
+    <footer class="osnfooter">
+        <img src="media/logo.png" alt="" class="logo1">
+        <p class="numberph">
+            8 (800) 100-10-10
+        </p>
+        <p class="fio">
+            Потапов Ярослав Кириллович
+        </p>
+        <div class="social-links">
+            <a href="#" class="social-link"><img src="media/Group 1.png" alt=""></a>
+            <a href="#" class="social-link"><img src="media/Group 2.png" alt=""></a>
+            <a href="#" class="social-link"><img src="media/Group 3.png" alt=""></a>
+        </div>
+    </footer>
+    <script>
+        function attemptLogin() {
+            var enteredPhone = document.querySelector('.formpoisk7_1').value;
+            var enteredPassword = document.querySelector('.formpoisk8_1').value;
+
+            var expectedPhone = '89991234567';
+            var expectedPassword = 'password12*';
+
+            if (enteredPhone === expectedPhone && enteredPassword === expectedPassword) {
+                window.location.assign('cabb.html');
+            } else {
+                alert('Неверный номер телефона или пароль. Пожалуйста, попробуйте снова.');
+            }
+        }
+
+        var loginButton = document.querySelector('.formpoisk6_1');
+        loginButton.onclick = function(event) {
+            event.preventDefault();
+            attemptLogin();
+        };
+    </script>
+</body>
+</html>
